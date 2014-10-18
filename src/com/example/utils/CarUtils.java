@@ -23,7 +23,7 @@ public class CarUtils {
 				maxCar = car;
 				continue;
 			}
-			if (maxCar.engineVolume < car.engineVolume) {
+			if (maxCar.getEngineVolume() < car.getEngineVolume()) {
 				maxCar = car;
 			}
 		}
@@ -44,7 +44,7 @@ public class CarUtils {
 				oldCar = car;
 				continue;
 			}
-			if (oldCar.prodYear > car.prodYear) {
+			if (oldCar.getProdYear() > car.getProdYear()) {
 				oldCar = car;
 			}
 
@@ -63,11 +63,11 @@ public class CarUtils {
 			
 			for(Iterator<Car> it = retList.iterator(); it.hasNext();) {
 			    Car oldCar = it.next();
-			    if (oldCar.prodYear> car.prodYear){
+			    if (oldCar.getProdYear()> car.getProdYear()){
 					retList.clear();
 					retList.add(car);
 				}
-				if(oldCar.prodYear==car.prodYear){
+				if(oldCar.getProdYear()==car.getProdYear()){
 					retList.add(car);
 				}
 			    

@@ -82,28 +82,13 @@ public final class ACarCreator_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        etCarName = ((EditText) hasViews.findViewById(id.etCarName));
-        etEngineVolume = ((EditText) hasViews.findViewById(id.etEngineVolume));
         sbProductionYear = ((SeekBar) hasViews.findViewById(id.sbProductionYear));
-        ibList = ((ImageButton) hasViews.findViewById(id.ibList));
-        etProductionYear = ((EditText) hasViews.findViewById(id.etProductionYear));
         etDoorsAmmount = ((EditText) hasViews.findViewById(id.etDoorsAmmount));
+        etEngineVolume = ((EditText) hasViews.findViewById(id.etEngineVolume));
+        etCarName = ((EditText) hasViews.findViewById(id.etCarName));
+        ibList = ((ImageButton) hasViews.findViewById(id.ibList));
         ibAdd = ((ImageButton) hasViews.findViewById(id.ibAdd));
-        {
-            View view = hasViews.findViewById(id.ibList);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        ACarCreator_.this.ibList();
-                    }
-
-                }
-                );
-            }
-        }
+        etProductionYear = ((EditText) hasViews.findViewById(id.etProductionYear));
         {
             View view = hasViews.findViewById(id.ibAdd);
             if (view!= null) {
@@ -113,6 +98,21 @@ public final class ACarCreator_
                     @Override
                     public void onClick(View view) {
                         ACarCreator_.this.ibAdd();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.ibList);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        ACarCreator_.this.ibList();
                     }
 
                 }

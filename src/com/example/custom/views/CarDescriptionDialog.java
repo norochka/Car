@@ -40,19 +40,19 @@ public class CarDescriptionDialog extends RelativeLayout {
 
 	@AfterViews
 	void afterViews() {
-		etYearsNum.setText(String.valueOf(car.prodYear));
-		etVolumeNum.setText(String.valueOf(car.engineVolume));
-		etDoorsNum.setText(String.valueOf(car.doorNumber));
-		etCarName.setText(car.carName);
+		etYearsNum.setText(String.valueOf(car.getProdYear()));
+		etVolumeNum.setText(String.valueOf(car.getEngineVolume()));
+		etDoorsNum.setText(String.valueOf(car.getDoorNumber()));
+		etCarName.setText(car.getCarName());
 	}
 
 	@Click
 	
 	void btnSaveCh() {
-		car.doorNumber = Integer.valueOf(etDoorsNum.getText().toString());
-		car.engineVolume = Float.valueOf(etVolumeNum.getText().toString());
-		car.prodYear = Integer.valueOf(etYearsNum.getText().toString());
-		car.carName = String.valueOf(etCarName.getText().toString());
+		car.setDoorNumber(Integer.valueOf(etDoorsNum.getText().toString()));
+		car.setEngineVolume(Float.valueOf(etVolumeNum.getText().toString()));
+		car.setProdYear(Integer.valueOf(etYearsNum.getText().toString()));
+		car.setCarName(String.valueOf(etCarName.getText().toString()));
 		car.save();
 		List<Car> list = Car.listAll(Car.class);
 		// вызывается адаптор для обновления данных на экране

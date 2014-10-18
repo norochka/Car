@@ -50,12 +50,12 @@ public class ACarsList extends Activity {
 	public void lvCars(String item) {
 		for (int i = 0; i < GlobalConstance.list.size(); i++) {
 			Car car = GlobalConstance.list.get(i);
-			if (car.carName.equals(item)) {
+			if (car.getCarName().equals(item)) {
 				CarDescriptionDialog carDialog = CarDescriptionDialog_.build(
 						ACarsList.this, car);
 				Dialog newDialog = new Dialog(ACarsList.this);
 				newDialog.setContentView(carDialog);
-				newDialog.setTitle(car.carName);
+				newDialog.setTitle(car.getCarName());
 				newDialog.show();
 				return;
 			}
@@ -66,14 +66,14 @@ public class ACarsList extends Activity {
 	void btnGetCarBiggestEngine() {
 		Car biggestEng = CarUtils.getCarBiggestEngine(GlobalConstance.list);
 		Toast.makeText(this,
-				biggestEng.carName + " " + biggestEng.engineVolume,
+				biggestEng.getCarName() + " " + biggestEng.getEngineVolume(),
 				Toast.LENGTH_LONG).show();
 	}
 
 	@Click
 	void btnGetOldestCar() {
 		Car oldCar = CarUtils.getOldestCar(GlobalConstance.list);
-		Toast.makeText(this, oldCar.carName + " - " + oldCar.prodYear,
+		Toast.makeText(this, oldCar.getCarName() + " - " + oldCar.getProdYear(),
 				Toast.LENGTH_LONG).show();
 	}
 
@@ -83,7 +83,7 @@ public class ACarsList extends Activity {
 
 		for (int i = 0; i < GlobalConstance.list.size(); i++) {
 			Car car = GlobalConstance.list.get(i);
-			if (car.carName.contains(etSearch.getText().toString())) {
+			if (car.getCarName().contains(etSearch.getText().toString())) {
 				serCars.add(car);
 			}
 		}

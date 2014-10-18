@@ -47,14 +47,14 @@ public class CustomAdapter extends BaseAdapter {
 		itemList.setCar(car);
 		
 		// asking our viewshku for text view and set a text for it which is the name of the car from ArrayList 
-		itemList.tvCarName.setText(car.carName);
+		itemList.tvCarName.setText(car.getCarName());
 		//
 		return itemList;
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return data.get(position).carName;
+		return data.get(position).getCarName();
 	}
 
 	@Override

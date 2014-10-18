@@ -101,10 +101,10 @@ public class ACarCreator extends Activity {
 			int productionYear = sbProductionYear.getProgress() + 1970;
 
 			Car car = new Car();
-			car.carName = carName;
-			car.doorNumber = doorsAmmoiunt;
-			car.engineVolume = engineVolume;
-			car.prodYear = productionYear;
+			car.setCarName(carName);
+			car.setDoorNumber(doorsAmmoiunt);
+			car.setEngineVolume(engineVolume);
+			car.setProdYear(productionYear);
 
 			GlobalConstance.list.add(car);
 			car.save();
@@ -120,7 +120,7 @@ public class ACarCreator extends Activity {
 	void ibList() {
 		List<Car> carsList = Car.listAll(Car.class);
 		for (int i = 0; i < carsList.size(); i++) {
-			log(carsList.get(i).carName);
+			log(carsList.get(i).getCarName());
 		}
 		Intent k = new Intent(ACarCreator.this, ACarsList_.class);
 		startActivity(k);

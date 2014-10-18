@@ -74,26 +74,11 @@ public final class ACarsList_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        btnGetOldestCar = ((Button) hasViews.findViewById(com.example.carcreator.R.id.btnGetOldestCar));
-        etSearch = ((EditText) hasViews.findViewById(com.example.carcreator.R.id.etSearch));
-        btnGetListOfOldestCars = ((Button) hasViews.findViewById(com.example.carcreator.R.id.btnGetListOfOldestCars));
         btnGetCarBiggestEngine = ((Button) hasViews.findViewById(com.example.carcreator.R.id.btnGetCarBiggestEngine));
+        etSearch = ((EditText) hasViews.findViewById(com.example.carcreator.R.id.etSearch));
+        btnGetOldestCar = ((Button) hasViews.findViewById(com.example.carcreator.R.id.btnGetOldestCar));
         lvCars = ((ListView) hasViews.findViewById(com.example.carcreator.R.id.lvCars));
-        {
-            View view = hasViews.findViewById(com.example.carcreator.R.id.btnGetOldestCar);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        ACarsList_.this.btnGetOldestCar();
-                    }
-
-                }
-                );
-            }
-        }
+        btnGetListOfOldestCars = ((Button) hasViews.findViewById(com.example.carcreator.R.id.btnGetListOfOldestCars));
         {
             View view = hasViews.findViewById(com.example.carcreator.R.id.btnGetCarBiggestEngine);
             if (view!= null) {
@@ -103,6 +88,21 @@ public final class ACarsList_
                     @Override
                     public void onClick(View view) {
                         ACarsList_.this.btnGetCarBiggestEngine();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(com.example.carcreator.R.id.btnGetOldestCar);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        ACarsList_.this.btnGetOldestCar();
                     }
 
                 }
