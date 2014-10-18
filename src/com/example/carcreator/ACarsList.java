@@ -73,7 +73,7 @@ public class ACarsList extends Activity {
 	@Click
 	void btnGetOldestCar() {
 		Car oldCar = CarUtils.getOldestCar(GlobalConstance.list);
-		Toast.makeText(this, oldCar.carName + " " + oldCar.prodYear,
+		Toast.makeText(this, oldCar.carName + " - " + oldCar.prodYear,
 				Toast.LENGTH_LONG).show();
 	}
 
