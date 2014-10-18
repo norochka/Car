@@ -1,0 +1,127 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drums"
+    tools:context="com.example.carcreator.ACarCreator" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Car Creator"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="26dp"
+        android:text="Car Name"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/etEngineVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textColor="@android:color/white" />
+
+    <ImageButton
+        android:id="@+id/ibAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/add" />
+
+    <ImageButton
+        android:id="@+id/ibList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ibAdd"
+        android:layout_toRightOf="@+id/etDoorsAmmount"
+        android:src="@drawable/list" />
+
+    <EditText
+        android:id="@+id/etDoorsAmmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/etCarName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:ems="10"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etCarName"
+        android:layout_below="@+id/etCarName"
+        android:text="Engine Volume"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etEngineVolume"
+        android:layout_below="@+id/etEngineVolume"
+        android:text="Doors Ammount"
+        android:textColor="@android:color/white" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/etEngineVolume"
+        android:layout_toRightOf="@+id/textView4" >
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etDoorsAmmount"
+        android:layout_below="@+id/etDoorsAmmount"
+        android:layout_marginTop="16dp"
+        android:text="Production Year"
+        android:textColor="@android:color/white" />
+
+    <SeekBar
+        android:id="@+id/sbProductionYear"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ibAdd"
+        android:layout_below="@+id/textView5"
+        android:padding="10dp"
+        android:max="44"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/etProductionYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sbProductionYear"
+        android:layout_below="@+id/sbProductionYear"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

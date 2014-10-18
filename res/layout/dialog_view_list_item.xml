@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Car Details"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageView
+        android:id="@+id/imEngine"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imProduction"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/engine" />
+
+    <ImageView
+        android:id="@+id/imDoor"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imEngine"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/door" />
+
+    <TextView
+        android:id="@+id/tvProductionYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imProduction"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/imProduction"
+        android:text="Production Year" />
+
+    <TextView
+        android:id="@+id/tvEngineVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imEngine"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/imEngine"
+        android:text="Engine Volume" />
+
+    <TextView
+        android:id="@+id/tvDoors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imDoor"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/imDoor"
+        android:text="Number of Doors" />
+
+    <EditText
+        android:id="@+id/etVolumeNum"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imDoor"
+        android:layout_alignBottom="@+id/tvEngineVolume"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dp"
+        android:textStyle="italic|bold" />
+
+    <Button
+        android:id="@+id/btnSaveCh"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDoors"
+        android:layout_centerHorizontal="true"
+        android:text="Save Changes" />
+
+    <EditText
+        android:id="@+id/etDoorsNum"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvDoors"
+        android:layout_alignLeft="@+id/etVolumeNum"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dp"
+        android:textStyle="italic|bold" />
+
+    <EditText
+        android:id="@+id/etYearsNum"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvProductionYear"
+        android:layout_alignBottom="@+id/tvProductionYear"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dp"
+        android:textStyle="italic|bold" />
+
+    <EditText
+        android:id="@+id/etCarName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvProductionYear"
+        android:layout_below="@+id/tvTitle"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <ImageView
+        android:id="@+id/imCar2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/etCarName"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvTitle"
+        android:layout_centerVertical="true"
+        android:src="@drawable/car2" />
+
+    <ImageView
+        android:id="@+id/imProduction"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/imCar2"
+        android:layout_marginTop="19dp"
+        android:layout_toLeftOf="@+id/tvEngineVolume"
+        android:src="@drawable/production" />
+
+</RelativeLayout>
