@@ -62,7 +62,7 @@ public class CarDescriptionDialog extends RelativeLayout {
 	void afterViews() {
 		/**
 		 * Car name, production year of the car, engine volume, doors amount and
-		 * the picture of the car
+		 * the picture of the car and time and date of car creation
 		 */
 		etYearsNum.setText(String.valueOf(car.getProdYear()));
 		etVolumeNum.setText(String.valueOf(car.getEngineVolume()));

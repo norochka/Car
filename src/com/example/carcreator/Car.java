@@ -32,6 +32,9 @@ public class Car extends SugarRecord<Car> implements java.io.Serializable {
 	 * Represents the photo of the car taken by the camera
 	 */
 	private String pathToPhoto;
+	/**
+	 * Represents the date and time of car creation
+	 */
 	private String currentDate;
 
 	/**
@@ -129,12 +132,23 @@ public class Car extends SugarRecord<Car> implements java.io.Serializable {
 		this.pathToPhoto = pathToPhoto;
 	}
 
+	/**
+	 * Getter for the Date and time
+	 * 
+	 * @return returns date and time of car creation
+	 */
 	public String getCurrentDate() {
 		return currentDate;
 	}
 
+	/**
+	 * Setting the date ad time of car creation
+	 * 
+	 * @param currentDate
+	 *            current date and time of creation
+	 */
 	public void setCurrentDate(String currentDate) {
 		this.currentDate = currentDate;
 	}
-	
+
 }
