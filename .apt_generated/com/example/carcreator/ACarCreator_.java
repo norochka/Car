@@ -83,14 +83,14 @@ public final class ACarCreator_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        sbProductionYear = ((SeekBar) hasViews.findViewById(id.sbProductionYear));
-        ibAdd = ((ImageButton) hasViews.findViewById(id.ibAdd));
-        ivPhoto = ((ImageView) hasViews.findViewById(id.ivPhoto));
-        etCarName = ((EditText) hasViews.findViewById(id.etCarName));
-        etEngineVolume = ((EditText) hasViews.findViewById(id.etEngineVolume));
-        etProductionYear = ((EditText) hasViews.findViewById(id.etProductionYear));
         etDoorsAmmount = ((EditText) hasViews.findViewById(id.etDoorsAmmount));
+        ibAdd = ((ImageButton) hasViews.findViewById(id.ibAdd));
+        etCarName = ((EditText) hasViews.findViewById(id.etCarName));
+        sbProductionYear = ((SeekBar) hasViews.findViewById(id.sbProductionYear));
         ibList = ((ImageButton) hasViews.findViewById(id.ibList));
+        ivPhoto = ((ImageView) hasViews.findViewById(id.ivPhoto));
+        etProductionYear = ((EditText) hasViews.findViewById(id.etProductionYear));
+        etEngineVolume = ((EditText) hasViews.findViewById(id.etEngineVolume));
         {
             View view = hasViews.findViewById(id.ivPhoto);
             if (view!= null) {
@@ -107,21 +107,6 @@ public final class ACarCreator_
             }
         }
         {
-            View view = hasViews.findViewById(id.ibList);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        ACarCreator_.this.ibList();
-                    }
-
-                }
-                );
-            }
-        }
-        {
             View view = hasViews.findViewById(id.ibAdd);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -130,6 +115,21 @@ public final class ACarCreator_
                     @Override
                     public void onClick(View view) {
                         ACarCreator_.this.ibAdd();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.ibList);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        ACarCreator_.this.ibList();
                     }
 
                 }

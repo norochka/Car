@@ -122,9 +122,10 @@ public class ACarCreator extends Activity {
 		try {
 			String carName = etCarName.getText().toString();
 
-			// идет преобразования eddit text в int потмому что они совсем
-			// разных типов
-			// \то мы берем с eddit texta text
+			/**
+			 * идет преобразования eddit text в int потмому что они совсем
+			 * разных типов то мы берем с eddit texta text
+			 */
 
 			float engineVolume = Float.valueOf(etEngineVolume.getText()
 					.toString());
@@ -149,6 +150,10 @@ public class ACarCreator extends Activity {
 
 	}
 
+	/**
+	 * After clicking the button we receive the list of the cars and see the car
+	 * name
+	 */
 	@Click
 	void ibList() {
 		List<Car> carsList = Car.listAll(Car.class);
@@ -160,6 +165,9 @@ public class ACarCreator extends Activity {
 
 	}
 
+	/**
+	 * Going back to the first screen
+	 */
 	@Override
 	public void onBackPressed() {
 		/*
@@ -171,12 +179,22 @@ public class ACarCreator extends Activity {
 
 	}
 
+	/**
+	 * After clicking on image ,screen goes to camera
+	 */
 	@Click
 	void ivPhoto() {
+		/**
+		 * creating new object camraIntent that is used later as a parameter to
+		 * capture the picture from the camera and going back to the screen
+		 */
 		Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		startActivityForResult(cameraIntent, 200);
 	}
-
+/**
+ * 
+ * @param data
+ */
 	@OnActivityResult(200)
 	void onResult(Intent data) {
 		log("ya tut");

@@ -75,13 +75,28 @@ public final class ASettings_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        rbSingle = ((RadioButton) hasViews.findViewById(id.rbSingle));
-        rbMarried = ((RadioButton) hasViews.findViewById(id.rbMarried));
-        btnSave = ((Button) hasViews.findViewById(id.btnSave));
         cbMarried = ((CheckBox) hasViews.findViewById(id.cbMarried));
         etUsrSurname = ((EditText) hasViews.findViewById(id.etUsrSurname));
+        rbSingle = ((RadioButton) hasViews.findViewById(id.rbSingle));
         etUsrName = ((EditText) hasViews.findViewById(id.etUsrName));
+        rbMarried = ((RadioButton) hasViews.findViewById(id.rbMarried));
         cbSingle = ((CheckBox) hasViews.findViewById(id.cbSingle));
+        btnSave = ((Button) hasViews.findViewById(id.btnSave));
+        {
+            View view = hasViews.findViewById(id.btnSave);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        ASettings_.this.btnSave();
+                    }
+
+                }
+                );
+            }
+        }
         {
             View view = hasViews.findViewById(id.rbSingle);
             if (view!= null) {
@@ -113,14 +128,14 @@ public final class ASettings_
             }
         }
         {
-            View view = hasViews.findViewById(id.btnSave);
+            CompoundButton view = ((CompoundButton) hasViews.findViewById(id.cbMarried));
             if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
+                view.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 
                     @Override
-                    public void onClick(View view) {
-                        ASettings_.this.btnSave();
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        ASettings_.this.cbMarried(buttonView, isChecked);
                     }
 
                 }
@@ -136,21 +151,6 @@ public final class ASettings_
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         ASettings_.this.cbSingle(buttonView, isChecked);
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            CompoundButton view = ((CompoundButton) hasViews.findViewById(id.cbMarried));
-            if (view!= null) {
-                view.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        ASettings_.this.cbMarried(buttonView, isChecked);
                     }
 
                 }

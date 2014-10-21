@@ -11,6 +11,8 @@ import org.androidannotations.annotations.ViewById;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -72,8 +74,14 @@ public class ACarsList extends Activity {
 		}
 	}
 
+	/**
+	 * the button that shows the car with biggest engine
+	 */
 	@Click
 	void btnGetCarBiggestEngine() {
+		/**
+		 * takes the car for the
+		 */
 		Car biggestEng = CarUtils.getCarBiggestEngine(GlobalConstants.LIST);
 		Toast.makeText(this,
 				biggestEng.getCarName() + " " + biggestEng.getEngineVolume(),
@@ -98,10 +106,24 @@ public class ACarsList extends Activity {
 				serCars.add(car);
 			}
 		}
-
+		/**
+		 * if we dont have car in the new list the we have the shake animation
+		 */
+		if (serCars.isEmpty()) {
+			/**
+			 * loading an animation from the xml file
+			 * 
+			 */
+			final Animation a = AnimationUtils.loadAnimation(this,
+					R.anim.shakeanim);
+			/**
+			 * setting an animation on edit text
+			 */
+			etSearch.startAnimation(a);
+		}
+		listAdapter.setCars(serCars);
 		// call to bank
 		listAdapter.notifyDataSetChanged();
-		listAdapter.setCars(serCars);
 		log(etSearch.getText().toString());
 
 	}
