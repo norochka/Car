@@ -74,11 +74,11 @@ public final class ACarsList_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
+        btnGetOldestCar = ((Button) hasViews.findViewById(com.example.carcreator.R.id.btnGetOldestCar));
         etSearch = ((EditText) hasViews.findViewById(com.example.carcreator.R.id.etSearch));
         lvCars = ((ListView) hasViews.findViewById(com.example.carcreator.R.id.lvCars));
-        btnGetOldestCar = ((Button) hasViews.findViewById(com.example.carcreator.R.id.btnGetOldestCar));
-        btnGetListOfOldestCars = ((Button) hasViews.findViewById(com.example.carcreator.R.id.btnGetListOfOldestCars));
         btnGetCarBiggestEngine = ((Button) hasViews.findViewById(com.example.carcreator.R.id.btnGetCarBiggestEngine));
+        btnGetListOfOldestCars = ((Button) hasViews.findViewById(com.example.carcreator.R.id.btnGetListOfOldestCars));
         {
             View view = hasViews.findViewById(com.example.carcreator.R.id.btnGetCarBiggestEngine);
             if (view!= null) {

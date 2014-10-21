@@ -5,6 +5,9 @@ import static com.example.utils.Utils.log;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.InputStream;
+import java.sql.Date;
+import java.sql.Time;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +18,7 @@ import org.androidannotations.annotations.OnActivityResult;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.sharedpreferences.Pref;
 
+import android.R.integer;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -119,6 +123,9 @@ public class ACarCreator extends Activity {
 	 */
 	@Click
 	void ibAdd() {
+		String currentDateTimeString = DateFormat.getDateTimeInstance().format(
+				new java.util.Date());
+		Toast.makeText(this, currentDateTimeString, Toast.LENGTH_LONG).show();
 		try {
 			String carName = etCarName.getText().toString();
 
@@ -147,6 +154,7 @@ public class ACarCreator extends Activity {
 					Toast.LENGTH_LONG).show();
 
 		}
+		
 
 	}
 
@@ -156,9 +164,11 @@ public class ACarCreator extends Activity {
 	 */
 	@Click
 	void ibList() {
+
 		List<Car> carsList = Car.listAll(Car.class);
 		for (int i = 0; i < carsList.size(); i++) {
 			log(carsList.get(i).getCarName());
+
 		}
 		Intent k = new Intent(ACarCreator.this, ACarsList_.class);
 		startActivity(k);
@@ -191,10 +201,11 @@ public class ACarCreator extends Activity {
 		Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		startActivityForResult(cameraIntent, 200);
 	}
-/**
- * 
- * @param data
- */
+
+	/**
+	 * 
+	 * @param data
+	 */
 	@OnActivityResult(200)
 	void onResult(Intent data) {
 		log("ya tut");

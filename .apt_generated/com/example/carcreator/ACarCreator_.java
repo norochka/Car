@@ -83,14 +83,29 @@ public final class ACarCreator_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        etDoorsAmmount = ((EditText) hasViews.findViewById(id.etDoorsAmmount));
-        ibAdd = ((ImageButton) hasViews.findViewById(id.ibAdd));
-        etCarName = ((EditText) hasViews.findViewById(id.etCarName));
         sbProductionYear = ((SeekBar) hasViews.findViewById(id.sbProductionYear));
         ibList = ((ImageButton) hasViews.findViewById(id.ibList));
-        ivPhoto = ((ImageView) hasViews.findViewById(id.ivPhoto));
-        etProductionYear = ((EditText) hasViews.findViewById(id.etProductionYear));
+        ibAdd = ((ImageButton) hasViews.findViewById(id.ibAdd));
         etEngineVolume = ((EditText) hasViews.findViewById(id.etEngineVolume));
+        etProductionYear = ((EditText) hasViews.findViewById(id.etProductionYear));
+        etDoorsAmmount = ((EditText) hasViews.findViewById(id.etDoorsAmmount));
+        etCarName = ((EditText) hasViews.findViewById(id.etCarName));
+        ivPhoto = ((ImageView) hasViews.findViewById(id.ivPhoto));
+        {
+            View view = hasViews.findViewById(id.ibList);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        ACarCreator_.this.ibList();
+                    }
+
+                }
+                );
+            }
+        }
         {
             View view = hasViews.findViewById(id.ivPhoto);
             if (view!= null) {
@@ -115,21 +130,6 @@ public final class ACarCreator_
                     @Override
                     public void onClick(View view) {
                         ACarCreator_.this.ibAdd();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = hasViews.findViewById(id.ibList);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        ACarCreator_.this.ibList();
                     }
 
                 }
