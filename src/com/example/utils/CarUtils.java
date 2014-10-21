@@ -5,6 +5,12 @@ import java.util.Iterator;
 
 import com.example.carcreator.Car;
 
+/**
+ * Utility class for cars
+ * 
+ * @author eleonorakoshelva
+ * 
+ */
 public class CarUtils {
 
 	/**
@@ -33,7 +39,9 @@ public class CarUtils {
 
 	/**
 	 * returns the oldest car in the list
-	 * @param carList- list of cars
+	 * 
+	 * @param carList
+	 *            - list of cars
 	 * @return oldest car from list
 	 */
 	public static Car getOldestCar(ArrayList<Car> carList) {
@@ -51,40 +59,36 @@ public class CarUtils {
 		}
 		return oldCar;
 	}
-	
-	public static ArrayList<Car> getListOfOldestCars(ArrayList<Car> carList){
-		ArrayList<Car> retList= new ArrayList<Car>();
-		for( Car car: carList){
-			if(retList.isEmpty()){
+
+	/**
+	 * Returns the list of oldest cars
+	 * 
+	 * @param carList
+	 *            the list of all cars
+	 * @return list of returned cars
+	 */
+	public static ArrayList<Car> getListOfOldestCars(ArrayList<Car> carList) {
+		ArrayList<Car> retList = new ArrayList<Car>();
+		for (Car car : carList) {
+			if (retList.isEmpty()) {
 				retList.add(car);
 				continue;
 			}
-			
-			
-			for(Iterator<Car> it = retList.iterator(); it.hasNext();) {
-			    Car oldCar = it.next();
-			    if (oldCar.getProdYear()> car.getProdYear()){
+
+			for (Iterator<Car> it = retList.iterator(); it.hasNext();) {
+				Car oldCar = it.next();
+				if (oldCar.getProdYear() > car.getProdYear()) {
 					retList.clear();
 					retList.add(car);
 				}
-				if(oldCar.getProdYear()==car.getProdYear()){
+				if (oldCar.getProdYear() == car.getProdYear()) {
 					retList.add(car);
 				}
-			    
+
 			}
-			/*
-		for( Car oldCar: retList){
-			
-			if (oldCar.prodYear> car.prodYear){
-				retList.clear();
-				retList.add(car);
-			}
-			if(oldCar.prodYear==car.prodYear){
-				retList.add(car);
-			}
-		}*/
+
 		}
 		return retList;
 	}
-	
+
 }

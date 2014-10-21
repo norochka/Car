@@ -75,12 +75,12 @@ public final class ASettings_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        cbMarried = ((CheckBox) hasViews.findViewById(id.cbMarried));
+        rbSingle = ((RadioButton) hasViews.findViewById(id.rbSingle));
         rbMarried = ((RadioButton) hasViews.findViewById(id.rbMarried));
         btnSave = ((Button) hasViews.findViewById(id.btnSave));
-        rbSingle = ((RadioButton) hasViews.findViewById(id.rbSingle));
-        etUsrName = ((EditText) hasViews.findViewById(id.etUsrName));
+        cbMarried = ((CheckBox) hasViews.findViewById(id.cbMarried));
         etUsrSurname = ((EditText) hasViews.findViewById(id.etUsrSurname));
+        etUsrName = ((EditText) hasViews.findViewById(id.etUsrName));
         cbSingle = ((CheckBox) hasViews.findViewById(id.cbSingle));
         {
             View view = hasViews.findViewById(id.rbSingle);

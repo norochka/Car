@@ -16,6 +16,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import com.example.carcreator.R.id;
 import com.example.carcreator.R.layout;
@@ -83,21 +84,22 @@ public final class ACarCreator_
     @Override
     public void onViewChanged(HasViews hasViews) {
         sbProductionYear = ((SeekBar) hasViews.findViewById(id.sbProductionYear));
-        etDoorsAmmount = ((EditText) hasViews.findViewById(id.etDoorsAmmount));
-        etEngineVolume = ((EditText) hasViews.findViewById(id.etEngineVolume));
-        etCarName = ((EditText) hasViews.findViewById(id.etCarName));
-        ibList = ((ImageButton) hasViews.findViewById(id.ibList));
         ibAdd = ((ImageButton) hasViews.findViewById(id.ibAdd));
+        ivPhoto = ((ImageView) hasViews.findViewById(id.ivPhoto));
+        etCarName = ((EditText) hasViews.findViewById(id.etCarName));
+        etEngineVolume = ((EditText) hasViews.findViewById(id.etEngineVolume));
         etProductionYear = ((EditText) hasViews.findViewById(id.etProductionYear));
+        etDoorsAmmount = ((EditText) hasViews.findViewById(id.etDoorsAmmount));
+        ibList = ((ImageButton) hasViews.findViewById(id.ibList));
         {
-            View view = hasViews.findViewById(id.ibAdd);
+            View view = hasViews.findViewById(id.ivPhoto);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
 
                     @Override
                     public void onClick(View view) {
-                        ACarCreator_.this.ibAdd();
+                        ACarCreator_.this.ivPhoto();
                     }
 
                 }
@@ -119,7 +121,32 @@ public final class ACarCreator_
                 );
             }
         }
+        {
+            View view = hasViews.findViewById(id.ibAdd);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        ACarCreator_.this.ibAdd();
+                    }
+
+                }
+                );
+            }
+        }
         afterViews();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case  200 :
+                ACarCreator_.this.onResult(data);
+                break;
+        }
     }
 
     public static class IntentBuilder_ {

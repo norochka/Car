@@ -69,9 +69,9 @@ public final class ListItem_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        tvCarName = ((TextView) hasViews.findViewById(id.tvCarName));
         ivPicture = ((ImageView) hasViews.findViewById(id.ivPicture));
         ivDelete = ((ImageView) hasViews.findViewById(id.ivDelete));
+        tvCarName = ((TextView) hasViews.findViewById(id.tvCarName));
         {
             View view = hasViews.findViewById(id.ivDelete);
             if (view!= null) {

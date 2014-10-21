@@ -10,7 +10,7 @@ import org.androidannotations.annotations.ViewById;
 import com.example.carcreator.ACarsList;
 import com.example.carcreator.Car;
 import com.example.carcreator.R;
-import com.example.constance.GlobalConstance;
+import com.example.constance.GlobalConstants;
 
 import android.content.Context;
 import android.widget.ImageView;
@@ -40,7 +40,7 @@ public class ListItem extends RelativeLayout {
 	void ivDelete() {
 		car.delete();
 		List<Car> listAllCars = Car.listAll(Car.class);
-		GlobalConstance.list.remove(car);
+		GlobalConstants.LIST.remove(car);
 		//GlobalConstance.list =(ArrayList<Car>) listAllCars;
 		ACarsList.listAdapter.setCars(listAllCars);
 		ACarsList.listAdapter.notifyDataSetChanged();

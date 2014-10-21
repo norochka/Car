@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import com.example.carcreator.Car;
 import com.example.carcreator.R.id;
 import com.example.carcreator.R.layout;
@@ -70,11 +71,12 @@ public final class CarDescriptionDialog_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
+        ivPhoto = ((ImageView) hasViews.findViewById(id.ivPhoto));
         etCarName = ((EditText) hasViews.findViewById(id.etCarName));
-        etVolumeNum = ((EditText) hasViews.findViewById(id.etVolumeNum));
         etYearsNum = ((EditText) hasViews.findViewById(id.etYearsNum));
         btnSaveCh = ((Button) hasViews.findViewById(id.btnSaveCh));
         etDoorsNum = ((EditText) hasViews.findViewById(id.etDoorsNum));
+        etVolumeNum = ((EditText) hasViews.findViewById(id.etVolumeNum));
         {
             View view = hasViews.findViewById(id.btnSaveCh);
             if (view!= null) {

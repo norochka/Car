@@ -124,4 +124,12 @@
         android:inputType="number"
         android:textColor="@android:color/white" />
 
+    <ImageView
+        android:id="@+id/ivPhoto"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/ibAdd"
+        android:layout_toRightOf="@+id/textView3"
+        android:src="@drawable/picture" />
+
 </RelativeLayout>

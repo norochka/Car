@@ -9,15 +9,36 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import com.example.carcreator.Car;
+import com.example.constance.GlobalConstants;
 
 import android.util.Log;
-import android.widget.Toast;
 
+/**
+ * Class represents Utility methods
+ * 
+ * @author eleonorakoshelva
+ * 
+ */
 public class Utils {
+
+	/**
+	 * Displays message in Logcat
+	 * 
+	 * @param msg
+	 *            string representation of the message
+	 */
 	public static void log(String msg) {
-		Log.i("kuku", msg);
+		Log.i(GlobalConstants.TAG, msg);
 	}
 
+	/**
+	 * Converts Car List into the byte stream and writes it to a new file
+	 * 
+	 * @param path
+	 *            path to the created file
+	 * @param list
+	 *            list of Cars to convert
+	 */
 	public static void serealization(String path, ArrayList<Car> list) {
 		try {
 			File f = new File(path);
@@ -32,8 +53,15 @@ public class Utils {
 		}
 	}
 
+	/**
+	 * converts the byte stream into the Car list from the file
+	 * 
+	 * @param path
+	 *            path of file used for deserealization
+	 * @return returns deserealized car list
+	 */
 	public static ArrayList<Car> deserealization(String path) {
-		ArrayList<Car> desCar = new ArrayList<Car> ();
+		ArrayList<Car> desCar = new ArrayList<Car>();
 		try {
 			FileInputStream fileIn = new FileInputStream(path);
 			ObjectInputStream in = new ObjectInputStream(fileIn);
