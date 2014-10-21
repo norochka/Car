@@ -1,5 +1,6 @@
 package com.example.custom.views;
 
+import java.text.DateFormat;
 import java.util.List;
 
 import org.androidannotations.annotations.AfterViews;
@@ -32,10 +33,11 @@ public class CarDescriptionDialog extends RelativeLayout {
 	// ========================================================= Variables
 	private Car car;
 	private Activity activity;
+	String currentDateTimeString;
 
 	// ========================================================= VIEWS
 	@ViewById
-	public EditText etYearsNum, etVolumeNum, etDoorsNum, etCarName;
+	public EditText etYearsNum, etVolumeNum, etDoorsNum, etCarName, etDate;
 	@ViewById
 	public Button btnSaveCh;
 	@ViewById
@@ -66,10 +68,9 @@ public class CarDescriptionDialog extends RelativeLayout {
 		etVolumeNum.setText(String.valueOf(car.getEngineVolume()));
 		etDoorsNum.setText(String.valueOf(car.getDoorNumber()));
 		etCarName.setText(car.getCarName());
-
+		etDate.setText(car.getCurrentDate());
 		Bitmap myBitmap = BitmapFactory.decodeFile(car.getPathToPhoto());
 		ivPhoto.setImageBitmap(myBitmap);
-
 	}
 
 	/**

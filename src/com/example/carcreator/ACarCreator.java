@@ -52,6 +52,7 @@ public class ACarCreator extends Activity {
 	// =========================================================================Variables
 	private Bitmap bitmap;
 	public String path;
+	public String currentDateTimeString;
 
 	// ==========================================================================Settings
 	@Pref
@@ -146,6 +147,7 @@ public class ACarCreator extends Activity {
 			car.setEngineVolume(engineVolume);
 			car.setProdYear(productionYear);
 			car.setPathToPhoto(path);
+			car.setCurrentDate(currentDateTimeString);
 
 			GlobalConstants.LIST.add(car);
 			car.save();

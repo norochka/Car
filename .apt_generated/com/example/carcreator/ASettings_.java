@@ -75,28 +75,13 @@ public final class ASettings_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
+        cbMarried = ((CheckBox) hasViews.findViewById(id.cbMarried));
+        rbSingle = ((RadioButton) hasViews.findViewById(id.rbSingle));
+        etUsrName = ((EditText) hasViews.findViewById(id.etUsrName));
         btnSave = ((Button) hasViews.findViewById(id.btnSave));
         rbMarried = ((RadioButton) hasViews.findViewById(id.rbMarried));
         cbSingle = ((CheckBox) hasViews.findViewById(id.cbSingle));
-        etUsrName = ((EditText) hasViews.findViewById(id.etUsrName));
-        cbMarried = ((CheckBox) hasViews.findViewById(id.cbMarried));
         etUsrSurname = ((EditText) hasViews.findViewById(id.etUsrSurname));
-        rbSingle = ((RadioButton) hasViews.findViewById(id.rbSingle));
-        {
-            View view = hasViews.findViewById(id.btnSave);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        ASettings_.this.btnSave();
-                    }
-
-                }
-                );
-            }
-        }
         {
             View view = hasViews.findViewById(id.rbSingle);
             if (view!= null) {
@@ -121,6 +106,21 @@ public final class ASettings_
                     @Override
                     public void onClick(View view) {
                         ASettings_.this.radioButtonsClickListener(view);
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.btnSave);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        ASettings_.this.btnSave();
                     }
 
                 }

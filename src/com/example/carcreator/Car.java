@@ -1,5 +1,7 @@
 package com.example.carcreator;
 
+import java.text.DateFormat;
+
 import com.orm.SugarRecord;
 
 public class Car extends SugarRecord<Car> implements java.io.Serializable {
@@ -30,6 +32,7 @@ public class Car extends SugarRecord<Car> implements java.io.Serializable {
 	 * Represents the photo of the car taken by the camera
 	 */
 	private String pathToPhoto;
+	private String currentDate;
 
 	/**
 	 * Setter for car name
@@ -125,4 +128,13 @@ public class Car extends SugarRecord<Car> implements java.io.Serializable {
 	public void setPathToPhoto(String pathToPhoto) {
 		this.pathToPhoto = pathToPhoto;
 	}
+
+	public String getCurrentDate() {
+		return currentDate;
+	}
+
+	public void setCurrentDate(String currentDate) {
+		this.currentDate = currentDate;
+	}
+	
 }
