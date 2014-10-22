@@ -116,7 +116,8 @@ public class ACarCreator extends Activity {
 
 		// Intent k = new Intent(ACarCreator.this, ASettings_.class);
 		// startActivity(k);
-
+		Intent k = new Intent(ACarCreator.this, ACarDrawer_.class);
+		startActivity(k);
 	}
 
 	/**
@@ -151,12 +152,12 @@ public class ACarCreator extends Activity {
 
 			GlobalConstants.LIST.add(car);
 			car.save();
+
 		} catch (Exception e) {
 			Toast.makeText(this, "Please fill all the fields",
 					Toast.LENGTH_LONG).show();
-
+			e.printStackTrace();
 		}
-		
 
 	}
 

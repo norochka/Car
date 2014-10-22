@@ -83,29 +83,14 @@ public final class ACarCreator_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        ibAdd = ((ImageButton) hasViews.findViewById(id.ibAdd));
-        ivPhoto = ((ImageView) hasViews.findViewById(id.ivPhoto));
         etEngineVolume = ((EditText) hasViews.findViewById(id.etEngineVolume));
+        ibAdd = ((ImageButton) hasViews.findViewById(id.ibAdd));
+        etCarName = ((EditText) hasViews.findViewById(id.etCarName));
         sbProductionYear = ((SeekBar) hasViews.findViewById(id.sbProductionYear));
         etDoorsAmmount = ((EditText) hasViews.findViewById(id.etDoorsAmmount));
         etProductionYear = ((EditText) hasViews.findViewById(id.etProductionYear));
-        etCarName = ((EditText) hasViews.findViewById(id.etCarName));
         ibList = ((ImageButton) hasViews.findViewById(id.ibList));
-        {
-            View view = hasViews.findViewById(id.ivPhoto);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        ACarCreator_.this.ivPhoto();
-                    }
-
-                }
-                );
-            }
-        }
+        ivPhoto = ((ImageView) hasViews.findViewById(id.ivPhoto));
         {
             View view = hasViews.findViewById(id.ibAdd);
             if (view!= null) {
@@ -115,6 +100,21 @@ public final class ACarCreator_
                     @Override
                     public void onClick(View view) {
                         ACarCreator_.this.ibAdd();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(id.ivPhoto);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        ACarCreator_.this.ivPhoto();
                     }
 
                 }

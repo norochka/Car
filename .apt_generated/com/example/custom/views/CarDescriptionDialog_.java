@@ -71,13 +71,13 @@ public final class CarDescriptionDialog_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        btnSaveCh = ((Button) hasViews.findViewById(id.btnSaveCh));
         etDate = ((EditText) hasViews.findViewById(id.etDate));
-        etDoorsNum = ((EditText) hasViews.findViewById(id.etDoorsNum));
         etYearsNum = ((EditText) hasViews.findViewById(id.etYearsNum));
-        ivPhoto = ((ImageView) hasViews.findViewById(id.ivPhoto));
-        etVolumeNum = ((EditText) hasViews.findViewById(id.etVolumeNum));
         etCarName = ((EditText) hasViews.findViewById(id.etCarName));
+        btnSaveCh = ((Button) hasViews.findViewById(id.btnSaveCh));
+        etDoorsNum = ((EditText) hasViews.findViewById(id.etDoorsNum));
+        etVolumeNum = ((EditText) hasViews.findViewById(id.etVolumeNum));
+        ivPhoto = ((ImageView) hasViews.findViewById(id.ivPhoto));
         {
             View view = hasViews.findViewById(id.btnSaveCh);
             if (view!= null) {

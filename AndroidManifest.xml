@@ -47,6 +47,10 @@
             android:name=".ASettings_"
             android:label="@string/title_activity_asettings" >
         </activity>
+        <activity
+            android:name=".ACarDrawer_"
+            android:label="@string/title_activity_acar_drawer" >
+        </activity>
     </application>
 
 </manifest>
